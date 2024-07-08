@@ -73,15 +73,7 @@ function Home() {
               initial={{ opacity: 0 }}
               transition={{ delay: 4, duration: 7 }}
             >
-              <div
-                className="flex content-between gap-5 md:gap-10 mt-10"
-                // sx={{
-                //   display: "flex",
-                //   justifyContent: "space-between",
-                //   width: { xs: "75vw", sm: "40vw" },
-                //   marginY: { xs: "10%" },
-                // }}
-              >
+              <div className="flex content-between gap-5 md:gap-10 mt-5">
                 <motion.a
                   href="https://www.linkedin.com/in/mohd-abdul-ikram-388410223"
                   style={{ color: COLORS.GREEN, opacity: 0.7 }}
@@ -128,15 +120,40 @@ function Home() {
             </motion.div>
           </div>
           {/* Icon */}
-          <div className="text-white md:col-span-2 lg:col-span-1 flex justify-center items-end z-0 ">
-            <motion.div
-              initial={{ opacity: 0, scale: 0, y: 0 }}
-              animate={{ opacity: 1, scale: 0.75, y: 30 }}
-              transition={{ duration: 2 }}
-              whileTap={{ y: -1500 }}
-              className="mask mask-hexagon"
-              style={{ height: 200, width: 200, backgroundColor: COLORS.GREEN }}
-            ></motion.div>
+          <div className="text-white md:col-span-2 lg:col-span-1 flex justify-center items-end md:items-center z-0 ">
+            <div className="flex flex-col">
+              <motion.div
+                initial={{ opacity: 0, scale: 0, y: 0 }}
+                animate={{ opacity: 1, scale: 1, y: -30 }}
+                // initial={{ y: -50 }}
+                // animate={{ y: 0 }}
+                transition={{ duration: 2 }}
+                // whileTap={{ scale: 1 }}
+                className="mask mask-hexagon"
+                style={{
+                  height: 200,
+                  width: 200,
+                  backgroundColor: COLORS.GREEN,
+                }}
+              >
+                <img src="/pro-nobg.png" />
+              </motion.div>
+              <div className="flex gap-5 justify-center">
+                {[1, 1, 1, 1, 1].map((item, idx) => (
+                  <motion.div
+                    initial={{ y: idx % 2 === 0 ? -50 : -25, opacity: 0 }}
+                    animate={{ y: idx % 2 === 0 ? 10 : 0, opacity: 1 }}
+                    transition={{ duration: 1, delay: 5 }}
+                    style={{
+                      height: 10,
+                      width: 10,
+                      backgroundColor: COLORS.GREEN,
+                    }}
+                    className="bg-slate-100 rounded"
+                  ></motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

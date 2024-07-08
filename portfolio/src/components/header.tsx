@@ -63,13 +63,12 @@ const LargerHeader = () => {
       <div className="flex-none">
         <ul className="menu menu-horizontal pr-20">
           {headerBtn.map((item) => (
-            <li className="">
+            <li className=" hover:bg-green-500 rounded-lg ">
               <a>{item.name}</a>
             </li>
           ))}
         </ul>
       </div>
-      <div className="flex-none"></div>
     </div>
   );
 };
