@@ -6,7 +6,7 @@ function About() {
   return (
     <div className="h-full flex flex-col gap-1 p-2">
       <Title name={"About Me"} />
-      <div className="p-2">
+      <div className="p-2 flex flex-1 items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 text-white text-sm lg:text-xl leading-6 lg:leading-relaxed">
           <div>
             <motion.div

@@ -10,6 +10,7 @@ export default {
         fs_xs: 28,
         fs_sm: 40,
         fs_md: 50,
+        toosmall: 8,
       },
     },
   },

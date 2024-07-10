@@ -71,20 +71,11 @@ export const COLORS = {
   ];
   
   export const timeline = [
-    {
-      id: 1,
-      year: "2017",
-      desc: "Began my educational journey at Chaitanya High School, where I completed my secondary education with notable grade of 8.8.",
-    },
-    {
-      id: 2,
-      year: "2017-19",
-      desc: "Then continued to Pratibha Junior College, where I completed my intermediate education. During this phase, I achieved a grade of 8.6.",
-    },
+
     {
       id: 3,
       year: "2019",
-      desc: "My academic pursuit then led me to Jaya Prakash Narayan College of Engineering for Bachelor of Technology in Computer Science.",
+      desc: "My academic pursuit led me to Jaya Prakash Narayan College of Engineering for Bachelor of Technology in Computer Science.",
     },
     {
       id: 4,
@@ -93,13 +84,13 @@ export const COLORS = {
     },
     {
       id: 5,
-      year: "2023",
-      desc: "My academic journey culminated when I completed my Bachelor of Technology, achieving an aggregate of 7.2.This marked a significant milestone in my career.",
+      year: "2023-24",
+      desc: "Served as a Junior Software Developer in Techtok4U PVT LTD where I contributed in both web and app(React Native) for optimisation, bug fixing and new feature development.",
     },
     {
       id: 6,
       year: "PRESENT",
-      desc: "Looking for the opportunities to showcase my skills as a developer.",
+      desc: "Looking for the opportunities to leverage my skills!",
     },
   ];
   

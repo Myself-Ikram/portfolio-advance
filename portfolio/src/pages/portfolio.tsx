@@ -61,7 +61,7 @@ function Portfolio() {
         <div className="flex justify-center p-2">
           <div className="carousel rounded-box space-x-3">
             {currentArray.length === 0
-              ? [1, 1, 1].map((i) => <LoadingCarousel />)
+              ? [1, 1, 1].map(() => <LoadingCarousel />)
               : currentArray.map((item, idx) => (
                   <CarouselItem item={item} idx={idx} />
                 ))}

@@ -2,6 +2,7 @@ import About from "./pages/about";
 import Home from "./pages/home";
 import { COLORS } from "./constants/constant";
 import Portfolio from "./pages/portfolio";
+import Timeline from "./pages/timeline";
 
 const screens: { name: string; comp: any }[] = [
   {
@@ -15,6 +16,10 @@ const screens: { name: string; comp: any }[] = [
   {
     name: "Portfolio",
     comp: Portfolio,
+  },
+  {
+    name: "Timeline",
+    comp: Timeline,
   },
 ];
 
