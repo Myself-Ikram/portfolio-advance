@@ -3,6 +3,8 @@ import Home from "./pages/home";
 import { COLORS } from "./constants/constant";
 import Portfolio from "./pages/portfolio";
 import Timeline from "./pages/timeline";
+import Technologies from "./pages/technologies";
+import Title from "./components/title";
 
 const screens: { name: string; comp: any }[] = [
   {
@@ -20,6 +22,10 @@ const screens: { name: string; comp: any }[] = [
   {
     name: "Timeline",
     comp: Timeline,
+  },
+  {
+    name: "Technologies",
+    comp: Technologies,
   },
 ];
 
