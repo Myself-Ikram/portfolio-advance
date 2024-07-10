@@ -4,7 +4,7 @@ import about from "../lotties/about.json";
 import { motion } from "framer-motion";
 function About() {
   return (
-    <div className="h-full flex flex-col gap-1">
+    <div className="h-full flex flex-col gap-1 p-2">
       <Title name={"About Me"} />
       <div className="p-2">
         <div className="grid grid-cols-1 md:grid-cols-2 text-white text-sm lg:text-xl leading-6 lg:leading-relaxed">
@@ -42,20 +42,6 @@ function About() {
                 During my time as a Junior Developer, I gained experience in
                 building web and mobile applications. Prior to that, I honed my
                 skills through hands-on projects.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 3 }}
-              >
-                {" "}
-                <p
-                // sx={{ display: w2 ? "none" : "block" }}
-                >
-                  I'm a highly motivated individual eager to contribute to a
-                  collaborative and fast-paced environment. I'm a quick learner
-                  and excited to bring my enthusiasm and skills to a new team.
-                </p>
               </motion.p>
             </div>
           </div>

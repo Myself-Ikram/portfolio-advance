@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
 import About from "./pages/about";
 import Home from "./pages/home";
 import { COLORS } from "./constants/constant";
+import Portfolio from "./pages/portfolio";
 
 const screens: { name: string; comp: any }[] = [
   {
@@ -12,13 +12,15 @@ const screens: { name: string; comp: any }[] = [
     name: "About",
     comp: About,
   },
+  {
+    name: "Portfolio",
+    comp: Portfolio,
+  },
 ];
 
 function App() {
   return (
-    <div className=" bg-white text-black">
-      {/* <p>Hello</p> */}
-      {/* <About /> */}
+    <div className=" bg-white text-black font-mono">
       {screens.map((item, idx) => (
         <div
           className="h-screen md:h-halfscreen lg:h-screen"

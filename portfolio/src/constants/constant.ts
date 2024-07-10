@@ -24,10 +24,10 @@ export const COLORS = {
     },
     {
       id: 3,
-      name: "Currency Converter",
-      desc: "A basic React Native currency converter app was built to allow users to easily exchange currencies between different countries.",
-      img: "/images/portfolio.png",
-      link: "#",
+      name: "Task Management",
+      desc: "A React Native app empowers you to manage tasks. Create / update / delete and even mark completed ones.",
+      img: "/images/task.jpg",
+      link: "https://github.com/Myself-Ikram/task_management_mobile/tree/master",
     },
   ];
   export const webProjects = [
@@ -57,7 +57,7 @@ export const COLORS = {
     {
       id: 1,
       name: "Portfolio",
-      desc: "I've crafted a sleek portfolio website using Figma, showcasing my skills and projects. It boasts a clean, user-friendly design to captivate visitors and highlight my expertise effectively.",
+      desc: "I've crafted a sleek portfolio website using Figma, showcasing my skills and projects. It boasts a clean, user-friendly design.",
       img: "/images/portfolio.png",
       link: "#",
     },

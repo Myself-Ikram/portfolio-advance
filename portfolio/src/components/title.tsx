@@ -7,7 +7,6 @@ function Title(props: { name: string }) {
         className="font-bold uppercase"
         style={{
           color: COLORS.RED,
-          //   fontWeight: "bold",
           letterSpacing: 5,
         }}
       >
