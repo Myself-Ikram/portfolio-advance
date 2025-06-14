@@ -70,30 +70,21 @@ export const COLORS = {
     },
   ];
   
-  export const timeline = [
+ export const timeline = [
+  {
+    year: "July 2019 – July 2023",
+    desc: "Completed B.Tech in Computer Science Engineering from Jaya Prakash Narayana College of Engineering, participated in coding workshops, collaborative development projects, and contributed to tech fests and frontend training sessions.",
+  },
+  {
+    year: "Jun 2023 – May 2024",
+    desc: "Worked as Junior Software Developer at TechTok4u Pvt Ltd (Remote). Developed MERN-based web dashboard and React Native app for Instil - Digital School Management App, tracking classes, exams, attendance, and student performance, replacing manual workflows with digital processes.", 
+  },
+  {
+    year: "Oct 2024 – Present",
+    desc: "Currently a Frontend Developer at Aptapace Innovative Technologies (Onsite). Working on ReactJS & React Native projects, developing various applications including a Carpooling App with Google Maps and Aadhaar KYC, a Doctor Booking System with analytics and payment integrations, a Medical Event App (IRIA2026) that surpassed 1+ crore turnover before launch, and an Agri Marketplace app.", 
+  }
+];
 
-    {
-      id: 3,
-      year: "2019",
-      desc: "My academic pursuit led me to Jaya Prakash Narayan College of Engineering for Bachelor of Technology in Computer Science.",
-    },
-    {
-      id: 4,
-      year: "2019-23",
-      desc: "I dedicated four years of my B.Tech to learn front-end, back-end and MERN stack development, enhancing my skills significantly.",
-    },
-    {
-      id: 5,
-      year: "2023-24",
-      desc: "Served as a Junior Software Developer in Techtok4U PVT LTD where I contributed in both web and app(React Native) for optimisation, bug fixing and new feature development.",
-    },
-    {
-      id: 6,
-      year: "PRESENT",
-      desc: "Looking for the opportunities to leverage my skills!",
-    },
-  ];
-  
   export const t1 = [
     {
       id: 1,

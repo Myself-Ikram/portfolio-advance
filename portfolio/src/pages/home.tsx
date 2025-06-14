@@ -1,150 +1,325 @@
-import Header from "../components/header";
-import { COLORS } from "../constants/constant";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
-import { ImMail2 } from "react-icons/im";
+import { FaLinkedin, FaGithub, FaInstagram, FaCode } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
+import { RiLightbulbFlashLine } from "react-icons/ri";
+
+// Updated color palette
+const COLORS = {
+  PRIMARY: "#0ea5e9", // Sky blue
+  SECONDARY: "#06b6d4", // Cyan
+  ACCENT: "#8b5cf6", // Violet
+  DARK: "#0f172a", // Navy
+  LIGHT: "#f1f5f9", // Light gray
+  TEXT: "#e2e8f0", // Light text
+};
 
 function Home() {
   return (
-    <div className="h-full">
-      <Header />
-      <div className="grid sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-2 p-4 h-5/6 ">
-        {/* Intro */}
-        <div className="text-white md:col-span-3 lg:col-span-1 gap-9 flex flex-col justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-[#0c1220] to-[#1e293b] text-white overflow-hidden relative">
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(15)].map((_, i) => (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2, delay: 1 }}
-            className="text-2xl font-bold"
-          >
-            <p>Hi, I am</p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2.5, delay: 3 }}
-            className="text-3xl md:text-4xl lg:text-5xl"
-          >
-            <p className="font-bold flex">
-              MOHD ABDUL
-              <motion.p
-                animate={{ color: COLORS.GREEN }}
-                transition={{ delay: 5, duration: 0.5 }}
-              >
-                &nbsp;IKRAM
-              </motion.p>
-            </p>
-          </motion.div>
-          <motion.div
-            className="text-2xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2, delay: 6 }}
-          >
-            <TypeAnimation
-              sequence={[
-                "ReactJs Developer",
-                1000,
-                "MERN Stack Developer",
-                1000,
-                "React Native Developer",
-                1000,
-              ]}
-              speed={75} // Faster typing speed
-              repeat={Infinity}
-              cursor
-              style={{ color: "white" }}
-            />
-          </motion.div>
-          <motion.div
-            animate={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            transition={{ delay: 4, duration: 7 }}
-          >
-            <div className="flex content-between gap-5 md:gap-10 mt-5">
-              <motion.a
-                href="https://www.linkedin.com/in/mohd-abdul-ikram-388410223"
-                style={{ color: COLORS.GREEN, opacity: 0.7 }}
-                whileHover={{ scale: 1.2 }}
-              >
-                <FaLinkedin size={25} />
-              </motion.a>
-              <p style={{ color: COLORS.RED }}>|</p>
-              <motion.a
-                href="https://github.com/Myself-ikram"
-                style={{ color: COLORS.GREEN, opacity: 0.7 }}
-                whileHover={{ scale: 1.2 }}
-              >
-                <FaGithub size={25} />
-              </motion.a>
-              <p style={{ color: COLORS.RED }}>|</p>
+            key={i}
+            className="absolute rounded-full"
+            style={{
+              width: Math.random() * 120 + 20,
+              height: Math.random() * 120 + 20,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              backgroundColor: COLORS.ACCENT,
+              opacity: 0.05,
+            }}
+            animate={{
+              y: [0, Math.random() * 40 - 20],
+              x: [0, Math.random() * 40 - 20],
+            }}
+            transition={{
+              duration: Math.random() * 8 + 8,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+          />
+        ))}
+      </div>
 
-              <motion.a
-                href="#"
-                style={{ color: COLORS.GREEN, opacity: 0.7 }}
-                whileHover={{ scale: 1.2 }}
-              >
-                <FaInstagram size={25} />
-              </motion.a>
-              <p style={{ color: COLORS.RED }}>|</p>
+      {/* Floating grid pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
 
-              <motion.a
-                href="#"
-                style={{ color: COLORS.GREEN, opacity: 0.7 }}
-                whileHover={{ scale: 1.2 }}
-              >
-                <FaFacebook size={25} />
-              </motion.a>
-              <p style={{ color: COLORS.RED }}>|</p>
-
-              <motion.a
-                href="#contact"
-                style={{ color: COLORS.GREEN, opacity: 0.7 }}
-                whileHover={{ scale: 1.2 }}
-              >
-                <ImMail2 size={25} />
-              </motion.a>
-            </div>
+      {/* Header */}
+      <motion.div
+        className="fixed w-full z-50"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <motion.div
+            className="flex items-center gap-2"
+            whileHover={{ scale: 1.05 }}
+          >
+            <RiLightbulbFlashLine className="text-2xl text-cyan-400" />
+            <a href="#">
+              <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
+                Ikram
+              </span>
+            </a>
           </motion.div>
-        </div>
-        {/* Icon */}
-        <div className="text-white md:col-span-2 lg:col-span-1 flex justify-center items-end md:items-center z-0 ">
-          <div className="flex flex-col">
-            <motion.div
-              initial={{ opacity: 0, scale: 0, y: 0 }}
-              animate={{ opacity: 1, scale: 1, y: -30 }}
-              // initial={{ y: -50 }}
-              // animate={{ y: 0 }}
-              transition={{ duration: 2 }}
-              // whileTap={{ scale: 1 }}
-              className="mask mask-hexagon"
-              style={{
-                height: 200,
-                width: 200,
-                backgroundColor: COLORS.GREEN,
-              }}
-            >
-              <img src="/pro-nobg.png" />
-            </motion.div>
-            <div className="flex gap-5 justify-center">
-              {[1, 1, 1, 1, 1].map((item, idx) => (
-                <motion.div
-                  initial={{ y: idx % 2 === 0 ? -50 : -25, opacity: 0 }}
-                  animate={{ y: idx % 2 === 0 ? 10 : 0, opacity: 1 }}
-                  transition={{ duration: 1, delay: 5 }}
-                  style={{
-                    height: 10,
-                    width: 10,
-                    backgroundColor: COLORS.GREEN,
-                  }}
-                  className="bg-slate-100 rounded"
-                ></motion.div>
-              ))}
-            </div>
+
+          <div className="hidden md:flex gap-6">
+            {["About", "Projects", "Skills"].map((item, index) => (
+              <motion.a
+                key={index}
+                href={`#${item}`}
+                className="text-slate-300 hover:text-white transition-colors"
+                whileHover={{ y: -2 }}
+              >
+                {item}
+              </motion.a>
+            ))}
           </div>
+
+          <motion.button
+            className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <a
+              href={
+                "mailto:ikrammohdabdul@gmail.com?subject=Let's Connect&body=Hi, I have seen your portfolio and would love to connect with you"
+              }
+            >
+              Get in Touch
+            </a>
+          </motion.button>
+        </div>
+      </motion.div>
+
+      {/* Main content */}
+      <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Intro section */}
+          <div className="flex flex-col gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex items-center gap-3"
+            >
+              <div className="h-0.5 w-12 bg-cyan-400" />
+              <span className="text-cyan-400 font-medium tracking-wider">
+                HELLO, I'M
+              </span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-5xl md:text-6xl font-bold"
+            >
+              <h1 className="leading-tight">
+                MOHD ABDUL <span className="text-cyan-400">IKRAM</span>
+              </h1>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="text-2xl md:text-3xl h-14"
+            >
+              <TypeAnimation
+                sequence={[
+                  "React Developer",
+                  1500,
+                  "MERN Stack Developer",
+                  1500,
+                  "React Native Developer",
+                  1500,
+                  "UI/UX Enthusiast",
+                  1500,
+                ]}
+                speed={50}
+                repeat={Infinity}
+                cursor
+                className="text-cyan-300 font-medium"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="text-slate-300 max-w-lg leading-relaxed"
+            >
+              <p>
+                I build modern, responsive web and mobile applications with
+                cutting-edge technologies. Passionate about creating intuitive
+                user experiences and scalable solutions.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              className="flex flex-wrap gap-4"
+            >
+              <a href="#Projects">
+                <motion.button
+                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium flex items-center gap-2 text-xs"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <FaCode />
+                  View Projects
+                </motion.button>
+              </a>
+              <a href="/resume.pdf" download>
+                <motion.button
+                  className="px-6 py-3 rounded-lg bg-slate-800 text-white font-medium border border-slate-700 text-xs"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Download Resume
+                </motion.button>
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+              className="mt-8"
+            >
+              <div className="flex gap-6">
+                {[
+                  {
+                    icon: <FaLinkedin size={24} />,
+                    url: "https://www.linkedin.com/in/mohd-abdul-ikram-388410223",
+                    color: "#0A66C2",
+                  },
+                  {
+                    icon: <FaGithub size={24} />,
+                    url: "https://github.com/Myself-ikram",
+                    color: "#FFFFFF",
+                  },
+                  {
+                    icon: <FaInstagram size={24} />,
+                    url: "https://www.instagram.com/shadabqhadri?igsh=cW9paWw5cjJpczkz",
+                    color: "#E4405F",
+                  },
+                  {
+                    icon: <HiMail size={24} />,
+                    url: "mailto:ikrammohdabdul@gmail.com?subject=Let's Connect&body=Hi, I have seen your portfolio and would love to connect with you!",
+                    color: "#EA4335",
+                  },
+                ].map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.url}
+                    className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors"
+                    whileHover={{ y: -5, scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    style={{ color: social.color }}
+                  >
+                    {social.icon}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Profile image section */}
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="relative">
+              <div className="relative z-10">
+                <div className="relative overflow-hidden rounded-2xl border-4 border-cyan-400/20 shadow-2xl shadow-cyan-500/20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10" />
+                  <img
+                    src="pro.jpg"
+                    // src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                    alt="Profile"
+                    className="relative z-10 w-full max-w-md object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Floating elements */}
+              <motion.div
+                className="absolute -top-3 -left-2 w-24 h-24 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg shadow-cyan-500/30 z-0"
+                animate={{ y: [0, -10, 0] }}
+                style={{ zIndex: 10 }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <span className="font-bold text-slate-900">2+ Years</span>
+              </motion.div>
+
+              <motion.div
+                className="absolute -bottom-3 -right-2 w-20 h-20 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/30 z-0"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+                style={{ zIndex: 10 }}
+              >
+                <span className="font-bold text-white text-sm text-center">
+                  10+ Projects
+                </span>
+              </motion.div>
+
+              {/* Dots decoration */}
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex gap-3">
+                {[1, 2, 3, 4, 5].map((_, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="w-3 h-3 rounded-full bg-cyan-400"
+                    animate={{
+                      y: [0, idx % 2 === 0 ? -8 : -4, 0],
+                      scale: [1, 1.2, 1],
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      delay: idx * 0.2,
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
+
+      {/* Decorative elements at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cyan-500/10 to-transparent z-0" />
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-2 left-1/2 transform -translate-x-1/2 md:flex flex-col items-center hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8 }}
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+        >
+          <div className="w-8 h-12 rounded-full border-2 border-cyan-400 flex justify-center p-1">
+            <motion.div
+              className="w-2 h-2 rounded-full bg-cyan-400"
+              animate={{ y: [0, 20] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            />
+          </div>
+        </motion.div>
+        <span className=" text-cyan-400 text-sm mt-4 ">Scroll Down</span>
+      </motion.div>
     </div>
   );
 }
