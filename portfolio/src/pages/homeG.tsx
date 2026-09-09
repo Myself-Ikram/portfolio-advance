@@ -362,7 +362,7 @@ function Home() {
                 }}
               >
                 <img
-                  src="pro.jpg"
+                  src="/ikram-front.png"
                   alt="Profile"
                   className="relative z-10 w-full max-w-sm h-auto object-cover rounded-full transform hover:scale-105 transition-transform duration-500" // Circular image, slight zoom on hover
                   style={{ aspectRatio: "1/1" }} // Ensure it's a perfect circle

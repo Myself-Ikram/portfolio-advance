@@ -244,7 +244,7 @@ function Home() {
                 <div className="relative overflow-hidden rounded-2xl border-4 border-cyan-400/20 shadow-2xl shadow-cyan-500/20">
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10" />
                   <img
-                    src="pro.jpg"
+                    src="/ikram-front.png"
                     // src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                     alt="Profile"
                     className="relative z-10 w-full max-w-md object-cover"
