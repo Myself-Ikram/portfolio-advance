@@ -160,16 +160,6 @@ export default function Footer() {
                   GitHub
                 </a>
               </Magnetic>
-              <Magnetic strength={15}>
-                <a
-                  href="https://myself-ikram-portfolio.netlify.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:underline transition-all"
-                >
-                  Legacy Portfolio
-                </a>
-              </Magnetic>
             </div>
           </div>
         </div>
