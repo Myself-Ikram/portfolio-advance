@@ -74,28 +74,39 @@ export default function EnterpriseClients() {
           {enterpriseClients.map((client, i) => (
             <motion.div
               key={client.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.88, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{
-                duration: 0.75,
+                type: "spring",
+                stiffness: 280,
+                damping: 16,
+                mass: 0.7,
                 delay: i * 0.09,
-                ease: [0.76, 0, 0.24, 1],
               }}
-              className="group py-6 sm:py-8 flex items-center justify-between transition-all duration-300 hover:px-4 cursor-default"
+              whileHover={{ x: 6, scale: 1.01 }}
+              className="group py-6 sm:py-8 flex items-center justify-between transition-colors duration-300 hover:px-4 cursor-default rounded-2xl hover:bg-[#F8F8FA]/80"
             >
               {/* Left: Brand Logo Image + Company Name */}
               <div className="flex items-center gap-4 sm:gap-6">
                 <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
+                  initial={{ scale: 0, rotate: -15 }}
+                  whileInView={{
+                    scale: [0, 1.28, 0.92, 1.06, 1],
+                    rotate: [-15, 8, -4, 2, 0],
+                  }}
                   viewport={{ once: true }}
                   transition={{
-                    duration: 0.5,
+                    duration: 0.65,
                     delay: i * 0.09 + 0.1,
-                    ease: [0.34, 1.56, 0.64, 1],
+                    ease: "easeOut",
                   }}
-                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-[#F8F8FA] border border-[#1C1D20]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-sm p-2 sm:p-2.5"
+                  whileHover={{
+                    scale: 1.18,
+                    rotate: [0, -6, 6, -3, 0],
+                    transition: { duration: 0.4 },
+                  }}
+                  className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-[#F8F8FA] border border-[#1C1D20]/10 flex items-center justify-center flex-shrink-0 shadow-sm p-2 sm:p-2.5 bubble-wobble bubble-float-${i % 5} group-hover:shadow-lg transition-shadow duration-300`}
                 >
                   <img
                     src={client.logo}
@@ -105,7 +116,7 @@ export default function EnterpriseClients() {
                   />
                 </motion.div>
                 <div>
-                  <h4 className="text-xl sm:text-3xl lg:text-4xl font-normal text-[#1C1D20] tracking-tight group-hover:text-[#455CE9] group-hover:translate-x-2 transition-all duration-300">
+                  <h4 className="text-xl sm:text-3xl lg:text-4xl font-normal text-[#1C1D20] tracking-tight group-hover:text-[#455CE9] group-hover:translate-x-1.5 transition-all duration-300">
                     {client.name}
                   </h4>
                   {client.sub && (
@@ -122,15 +133,9 @@ export default function EnterpriseClients() {
                   {client.region}
                 </span>
                 <motion.span
-                  initial={{ scale: 0.7, opacity: 0, rotate: -25 }}
-                  whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: i * 0.09 + 0.15,
-                    ease: [0.34, 1.56, 0.64, 1],
-                  }}
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#1C1D20]/15 flex items-center justify-center text-xs sm:text-sm text-[#1C1D20]/40 group-hover:border-[#455CE9] group-hover:bg-[#455CE9] group-hover:text-white transition-all duration-300"
+                  whileHover={{ scale: 1.22, rotate: 45 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#1C1D20]/15 flex items-center justify-center text-xs sm:text-sm text-[#1C1D20]/40 group-hover:border-[#455CE9] group-hover:bg-[#455CE9] group-hover:text-white transition-all duration-300 shadow-sm"
                 >
                   ↗
                 </motion.span>

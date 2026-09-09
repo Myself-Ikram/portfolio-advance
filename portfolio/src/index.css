@@ -111,3 +111,51 @@ body {
   height: 1px;
   background-color: rgba(255, 255, 255, 0.2);
 }
+
+/* ── Bubbling & Wobbling animations for Interactive Elements ── */
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-5px) rotate(-1.2deg);
+  }
+  66% {
+    transform: translateY(4px) rotate(1.2deg);
+  }
+}
+
+@keyframes bubbleWobble {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.09, 0.93) rotate(-3.5deg);
+  }
+  50% {
+    transform: scale(0.94, 1.07) rotate(3.5deg);
+  }
+  75% {
+    transform: scale(1.03, 0.98) rotate(-1deg);
+  }
+}
+
+.bubble-float-0 {
+  animation: bubbleFloat 4.2s ease-in-out infinite;
+}
+.bubble-float-1 {
+  animation: bubbleFloat 4.8s ease-in-out 0.5s infinite;
+}
+.bubble-float-2 {
+  animation: bubbleFloat 3.9s ease-in-out 1s infinite;
+}
+.bubble-float-3 {
+  animation: bubbleFloat 5.2s ease-in-out 1.5s infinite;
+}
+.bubble-float-4 {
+  animation: bubbleFloat 4.5s ease-in-out 2s infinite;
+}
+
+.bubble-wobble:hover {
+  animation: bubbleWobble 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}

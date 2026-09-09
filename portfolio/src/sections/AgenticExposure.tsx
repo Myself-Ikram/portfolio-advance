@@ -59,32 +59,50 @@ export default function AgenticExposure() {
           </span>
         </div>
 
-        {/* Clean Logo + Name Grid */}
+        {/* Clean Logo + Name Grid with Bubbling & Wobbling Interactions */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-5">
           {agentTools.map((agent, i) => (
             <motion.div
               key={agent.id}
-              initial={{ opacity: 0, y: 35, scale: 0.92 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.65,
-                delay: i * 0.08,
-                ease: [0.25, 1, 0.5, 1],
+              initial={{ opacity: 0, scale: 0.35, y: 45 }}
+              whileInView={{
+                opacity: 1,
+                scale: [0.35, 1.16, 0.94, 1.03, 1],
+                y: 0,
               }}
-              className="bg-white border border-[#1C1D20]/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center hover:shadow-xl hover:border-[#1C1D20]/25 transition-all duration-300 group hover:-translate-y-1.5 cursor-default"
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{
+                duration: 0.75,
+                delay: i * 0.09,
+                ease: [0.34, 1.56, 0.64, 1],
+              }}
+              whileHover={{
+                scale: 1.08,
+                rotate: [0, -3, 3, -1.5, 0],
+                transition: { duration: 0.45 },
+              }}
+              whileTap={{ scale: 0.94 }}
+              className={`bg-white border border-[#1C1D20]/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center hover:shadow-2xl hover:border-[#455CE9]/40 transition-all duration-300 group cursor-default bubble-float-${i % 5}`}
             >
-              {/* Logo Image */}
+              {/* Logo Image with Bubble Pop & Wobble */}
               <motion.div
-                initial={{ scale: 0.75, opacity: 0, rotate: -8 }}
-                whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
+                initial={{ scale: 0, rotate: -20 }}
+                whileInView={{
+                  scale: [0, 1.35, 0.9, 1.08, 1],
+                  rotate: [-20, 10, -5, 2, 0],
+                }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 0.55,
-                  delay: i * 0.08 + 0.12,
-                  ease: [0.34, 1.56, 0.64, 1],
+                  duration: 0.65,
+                  delay: i * 0.09 + 0.12,
+                  ease: "easeOut",
                 }}
-                className="w-14 h-14 rounded-2xl bg-[#F8F8FA] border border-[#1C1D20]/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm p-2.5"
+                whileHover={{
+                  scale: 1.2,
+                  rotate: [0, -8, 8, -4, 0],
+                  transition: { duration: 0.4 },
+                }}
+                className="w-14 h-14 rounded-2xl bg-[#F8F8FA] border border-[#1C1D20]/10 flex items-center justify-center mb-4 shadow-sm p-2.5 group-hover:shadow-md group-hover:border-[#455CE9]/30 transition-all duration-300 bubble-wobble"
               >
                 <img
                   src={agent.logo}
@@ -95,7 +113,7 @@ export default function AgenticExposure() {
               </motion.div>
 
               {/* Tool Name */}
-              <h4 className="text-base sm:text-lg font-medium text-[#1C1D20] tracking-tight group-hover:text-[#455CE9] transition-colors">
+              <h4 className="text-base sm:text-lg font-medium text-[#1C1D20] tracking-tight group-hover:text-[#455CE9] group-hover:scale-105 transition-all">
                 {agent.name}
               </h4>
 
